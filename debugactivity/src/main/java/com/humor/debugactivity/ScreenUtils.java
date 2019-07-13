@@ -2,6 +2,7 @@ package com.humor.debugactivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
@@ -118,6 +119,11 @@ public class ScreenUtils {
 		view.destroyDrawingCache();
 		return bp;
 
+	}
+
+	public static int px2dp(int px) {
+		final float scale = Resources.getSystem().getDisplayMetrics().density;
+		return (int) (px * scale);
 	}
 
 }
